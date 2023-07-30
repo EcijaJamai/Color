@@ -1,0 +1,33 @@
+import turtle
+
+# Function to draw a single line of the spider web
+def draw_line(length, angle):
+    turtle.forward(length)
+    turtle.backward(length)
+    turtle.right(angle)
+
+# Main function to draw the spider web
+def draw_spider_web(num_lines, line_length, angle):
+    for _ in range(num_lines):
+        draw_line(line_length, angle)
+        turtle.right(360 / num_lines)
+
+# Setup turtle
+turtle.speed(0)  # Fastest speed
+turtle.bgcolor("white")
+turtle.pencolor("black")
+
+# Set initial position
+turtle.penup()
+turtle.goto(0, -150)
+turtle.pendown()
+
+# Draw the spider web pattern
+num_lines = 12  # Number of lines in the web
+line_length = 300  # Length of each line
+angle = 30  # Angle between lines
+
+draw_spider_web(num_lines, line_length, angle)
+
+# Close the turtle graphics window when clicked
+turtle.done()
